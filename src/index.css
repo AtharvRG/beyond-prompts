@@ -153,5 +153,5 @@ html.lenis body {
 
 /* Limit reflow scope on heavy sections */
 main>section {
-  contain: layout style paint;
+  contain: layout style;
 }
