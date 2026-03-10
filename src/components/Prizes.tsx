@@ -79,7 +79,7 @@ export default function Prizes() {
                         <div className="relative z-10 mt-auto">
                             <div className="pt-8 -mt-8">
                                 <p className="massive-number font-serif italic font-light text-[22vw] lg:text-[14vw] leading-[0.8] text-text-primary tracking-tighter drop-shadow-sm">
-                                    <span className="font-sans not-italic text-[12vw] lg:text-[8vw] align-top mr-2 text-accent">₹</span>3-5L
+                                    <span className="font-sans not-italic text-[12vw] lg:text-[8vw] align-top mr-2 text-accent">₹</span>3L
                                 </p>
                             </div>
                             <p className="font-sans text-xs md:text-sm text-text-muted uppercase tracking-widest mt-8 font-medium">

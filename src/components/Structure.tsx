@@ -51,9 +51,12 @@ export default function Structure() {
                             Format & <br /> <span className="font-serif italic font-light lowercase text-accent text-6xl md:text-8xl tracking-tight">Rules.</span>
                         </h2>
                     </div>
-                    <p className="font-sans text-text-muted max-w-sm text-base md:text-lg">
-                        Meticulously crafted for maximum innovation. We are looking for builders who don't just use LLMs, but bend them.
-                    </p>
+                    <div className="flex flex-col gap-4 items-start md:items-end">
+                        <span className="font-sans text-sm uppercase tracking-widest font-semibold text-accent">3 – 5 April 2026</span>
+                        <p className="font-sans text-text-muted max-w-sm text-base md:text-lg">
+                            Meticulously crafted for maximum innovation. We are looking for builders who don't just use LLMs, but bend them.
+                        </p>
+                    </div>
                 </div>
 
                 {/* Editorial Bento Grid */}

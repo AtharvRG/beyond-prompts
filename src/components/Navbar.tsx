@@ -50,9 +50,12 @@ export default function Navbar() {
             <NavBase>
                 {/* Desktop View */}
                 <NavBody>
-                    <a href="#" className="font-gambino text-2xl uppercase tracking-tight text-text-primary z-20">
+                    <div>
+                    <a href="#" className="flex items-center gap-2 font-gambino text-2xl uppercase tracking-tight text-text-primary z-20">
+                        <img src="/logo.png" alt="Beyond Prompts logo" className="h-8 w-auto" />
                         Beyond<span className="text-accent">.</span>
                     </a>
+                    </div>  
 
                     <NavItems items={navItems} onItemClick={handleNavClick} />
 
@@ -72,7 +75,8 @@ export default function Navbar() {
                 {/* Mobile View */}
                 <MobileNav>
                     <MobileNavHeader>
-                        <a href="#" className="font-gambino text-2xl uppercase tracking-tight text-text-primary">
+                        <a href="#" className="flex items-center gap-2 font-gambino text-2xl uppercase tracking-tight text-text-primary">
+                            <img src="/logo.png" alt="Beyond Prompts logo" className="h-8 w-auto" />
                             Beyond<span className="text-accent">.</span>
                         </a>
                         <div className="flex items-center gap-4">

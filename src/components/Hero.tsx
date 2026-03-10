@@ -73,12 +73,16 @@ export default function Hero() {
 
                         <div className="flex flex-col gap-4 border-t border-border-light pt-6">
                             <div className="flex justify-between items-center font-sans text-sm uppercase tracking-widest">
+                                <span className="text-text-muted">Dates</span>
+                                <span className="font-semibold text-text-primary">3 – 5 April 2026</span>
+                            </div>
+                            <div className="flex justify-between items-center font-sans text-sm uppercase tracking-widest">
                                 <span className="text-text-muted">Capacity</span>
                                 <span className="font-semibold text-text-primary">60 + 10 Buffer</span>
                             </div>
                             <div className="flex justify-between items-center font-sans text-sm uppercase tracking-widest">
                                 <span className="text-text-muted">Prize Pool</span>
-                                <span className="font-semibold text-text-primary">₹3-5L Cash</span>
+                                <span className="font-semibold text-text-primary">₹ 3,00,000</span>
                             </div>
                             <div className="flex justify-between items-center font-sans text-sm uppercase tracking-widest">
                                 <span className="text-text-muted">Format</span>
