@@ -103,6 +103,8 @@ const CircularText: React.FC<CircularTextProps> = ({
         className="relative font-sans text-text-primary text-center cursor-pointer origin-center"
         style={{ 
           rotate: rotation,
+          willChange: 'transform',
+          transformStyle: 'preserve-3d'
         }}
         initial={{ rotate: 0 }}
         animate={controls}
@@ -120,8 +122,10 @@ const CircularText: React.FC<CircularTextProps> = ({
                 className="absolute inline-block left-1/2 top-1/2 text-[10px] md:text-xs font-bold uppercase tracking-[0.1em] transition-all duration-500 ease-[cubic-bezier(0,0,0,1)] whitespace-nowrap opacity-60"
                 style={{ 
                   transformOrigin: '0 0',
-                  transform: `rotate(${rotationDeg}deg) translateY(-${radius}px) translateX(-50%)`,
-                  WebkitTransform: `rotate(${rotationDeg}deg) translateY(-${radius}px) translateX(-50%)`
+                  transform: `rotate(${rotationDeg}deg) translateY(-${radius}px) translateX(-50%) translateZ(0)`,
+                  WebkitTransform: `rotate(${rotationDeg}deg) translateY(-${radius}px) translateX(-50%) translateZ(0)`,
+                  backfaceVisibility: 'hidden',
+                  WebkitBackfaceVisibility: 'hidden'
                 }}
               >
                 {letter}
