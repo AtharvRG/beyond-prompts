@@ -1,0 +1,157 @@
+@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap');
+@import url('https://api.fontshare.com/v2/css?f[]=satoshi@300,400,500,700&display=swap');
+
+@font-face {
+  font-family: 'Gambino';
+  /* Using quotes to handle the spaces in your filename */
+  src: url('./fonts/Gc Gambio Sans.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@import "tailwindcss";
+
+/* Add this inside your index.css */
+@theme {
+  /* Typography */
+  --font-sans: "Satoshi", sans-serif;
+  --font-serif: "Instrument Serif", serif;
+  --font-gambino: "Gambino", sans-serif;
+
+  /* Light Theme Colors */
+  --color-bg-primary: #F7F5F0;
+  --color-bg-secondary: #EFECE5;
+  --color-text-primary: #1A1A1A;
+  --color-text-muted: #6B6B6B;
+  --color-accent: #8C3A2A;
+  --color-border-light: rgba(26, 26, 26, 0.1);
+}
+
+/* Dark Theme Overrides */
+.dark {
+  --color-bg-primary: #0A0A0A;
+  --color-bg-secondary: #141414;
+  --color-text-primary: #F7F5F0;
+  --color-text-muted: #A3A3A3;
+  --color-accent: #D46A54;
+  /* Brighter terracotta for dark mode */
+  --color-border-light: rgba(247, 245, 240, 0.1);
+}
+
+@layer base {
+  body {
+    background-color: var(--color-bg-primary);
+    color: var(--color-text-primary);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    overflow-x: hidden;
+    /* Prevent Samsung Internet text inflation */
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    /* Fallback if view-transitions fail */
+  }
+
+  ::selection {
+    background-color: var(--color-text-primary);
+    color: var(--color-bg-primary);
+  }
+}
+
+/* ── View-Transition theme toggle ── */
+
+/* Register --vt-radius so the browser can interpolate it */
+@property --vt-radius {
+  syntax: "<length>";
+  inherits: false;
+  initial-value: 0px;
+}
+
+/* Disable the default cross-fade; JS drives the mask animation */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+::view-transition-old(root) {
+  z-index: 1;
+}
+
+::view-transition-new(root) {
+  z-index: 9999;
+  /* Soft feathered edge via radial-gradient mask.
+     Solid up to (radius - 50px), then fades to transparent over 50px. */
+  mask-image: radial-gradient(circle var(--vt-radius) at var(--vt-x) var(--vt-y),
+      black 0,
+      black calc(100% - 50px),
+      transparent 100%);
+  -webkit-mask-image: radial-gradient(circle var(--vt-radius) at var(--vt-x) var(--vt-y),
+      black 0,
+      black calc(100% - 50px),
+      transparent 100%);
+}
+
+/* Suppress CSS transitions during view-transition so elements don't
+   independently animate their colours between snapshots */
+html::view-transition-group(root)~*,
+html.vt-transitioning *,
+html.vt-transitioning *::before,
+html.vt-transitioning *::after {
+  transition-duration: 0s !important;
+}
+
+/* Lenis Smooth Scroll Base */
+html.lenis,
+html.lenis body {
+  height: auto;
+}
+
+.lenis.lenis-smooth {
+  scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+  overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+  overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+  pointer-events: none;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ── Performance: GPU-accelerate heavy layers ── */
+.gradual-blur,
+.gradual-blur div[style*="backdrop-filter"] {
+  transform: translateZ(0);
+}
+
+/* Hint Safari to pre-promote animated elements to GPU layers */
+.hero-title-line,
+.bento-box,
+.prize-card,
+.judge-row,
+.massive-number {
+  will-change: transform, opacity;
+}
+
+/* Limit reflow scope on heavy sections */
+main>section {
+  contain: layout style paint;
+}
