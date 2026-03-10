@@ -51,7 +51,7 @@ export default function Navbar() {
                 {/* Desktop View */}
                 <NavBody>
                     <div>
-                        <a href="#" className="flex items-center gap-2 font-gambino text-2xl uppercase tracking-tight text-text-primary z-20 no-underline">
+                        <a href="#" className="flex items-center gap-1 font-gambino text-2xl uppercase tracking-tighter text-text-primary z-20 no-underline">
                             Beyond<span className="text-accent">.</span>
                         </a>
                     </div>

@@ -69,7 +69,7 @@ export default function Structure() {
                         </h2>
                     </div>
                     <div className="flex flex-col gap-4 items-start md:items-end">
-                        <span className="font-sans text-sm uppercase tracking-widest font-semibold text-accent">3 – 5 April 2026</span>
+                        <span className="font-sans text-sm uppercase tracking-widest font-semibold text-accent">10 – 12 April 2026</span>
                         <p className="font-sans text-text-muted max-w-sm text-base md:text-lg">
                             Meticulously crafted for maximum innovation. We are looking for builders who don't just use LLMs, but bend them.
                         </p>
@@ -123,13 +123,16 @@ export default function Structure() {
                     {/* Box 4: Screening (Wide) */}
                     <div className="bento-box md:col-span-1 bg-text-primary text-bg-primary p-8 md:p-10 border border-text-primary flex flex-col justify-between group">
                         <div className="mb-12">
-                            <p className="font-sans text-xs text-bg-secondary/70 uppercase tracking-widest mb-4">Admission</p>
+                            <div className="flex justify-between items-center mb-4">
+                                <p className="font-sans text-xs text-bg-secondary/70 uppercase tracking-widest">Admission</p>
+                                <span className="font-sans text-[10px] text-bg-primary bg-text-muted/20 px-2 py-1 rounded-full uppercase tracking-widest font-bold">1st April • Online</span>
+                            </div>
                             <h3 className="font-serif italic text-5xl md:text-6xl tracking-tight">
                                 Screening.
                             </h3>
                         </div>
                         <p className="font-sans text-sm text-bg-secondary/80 leading-relaxed">
-                            Open to everyone, but heavily gated. Submit a 45s - 1m video pitch. We evaluate clarity, ambition, and audacity.
+                            Open to everyone, but heavily gated. Mandatory online round on 1st April. The exact format will be revealed. We evaluate clarity, ambition, and audacity.
                         </p>
                     </div>
 

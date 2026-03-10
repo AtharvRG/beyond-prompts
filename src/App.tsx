@@ -24,7 +24,7 @@ export default function App() {
   }, [isLoading]);
 
   return (
-    <ThemeProvider attribute="class" defaultTheme="light" enableSystem enableColorScheme={false} disableTransitionOnChange>
+    <ThemeProvider attribute="class" defaultTheme="light" enableSystem enableColorScheme={false}>
       {/* Standalone Cursor (No longer wraps the app) */}
       <GlobalCursor />
 

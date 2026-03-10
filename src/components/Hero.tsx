@@ -74,7 +74,7 @@ export default function Hero() {
                         <div className="flex flex-col gap-4 border-t border-border-light pt-6">
                             <div className="flex justify-between items-center font-sans text-sm uppercase tracking-widest">
                                 <span className="text-text-muted">Dates</span>
-                                <span className="font-semibold text-text-primary">3 – 5 April 2026</span>
+                                <span className="font-semibold text-text-primary">10 – 12 April 2026</span>
                             </div>
                             <div className="flex justify-between items-center font-sans text-sm uppercase tracking-widest">
                                 <span className="text-text-muted">Capacity</span>
