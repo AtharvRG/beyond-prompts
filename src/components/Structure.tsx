@@ -51,7 +51,7 @@ export default function Structure() {
                     <img
                         src="/logo.png"
                         alt="Beyond Prompts Logo"
-                        className="w-28 h-28 md:w-40 md:h-40 object-contain drop-shadow-2xl"
+                        className="w-40 h-40 md:w-40 md:h-40 object-contain drop-shadow-2xl"
                     />
                 </CircularText>
             </div>
