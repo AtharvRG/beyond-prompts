@@ -2,6 +2,7 @@ import { useRef } from 'react';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import { useGSAP } from '@gsap/react';
+import CircularText from './CircularText';
 
 // Register ScrollTrigger
 gsap.registerPlugin(ScrollTrigger);
@@ -38,7 +39,23 @@ export default function Structure() {
     }, { scope: containerRef });
 
     return (
-        <section ref={containerRef} id="structure" className="w-full py-24 px-6 md:px-12 bg-bg-secondary">
+        <section ref={containerRef} id="structure" className="relative w-full py-24 px-6 md:px-12 bg-bg-secondary z-10">
+            {/* The Intersection Logo */}
+            <div className="absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2 z-50 pointer-events-none md:pointer-events-auto">
+                <CircularText
+                    text="BEYOND✦PROMPTS✦AGENTIC✦CRUCIBLE✦"
+                    spinDuration={20}
+                    onHover="speedUp"
+                    className="scale-75 md:scale-100"
+                >
+                    <img
+                        src="/logo.png"
+                        alt="Beyond Prompts Logo"
+                        className="w-28 h-28 md:w-40 md:h-40 object-contain drop-shadow-2xl"
+                    />
+                </CircularText>
+            </div>
+
             <div className="max-w-[1400px] mx-auto">
 
                 {/* Section Header */}
@@ -64,9 +81,9 @@ export default function Structure() {
 
                     {/* Box 1: 48 Hours (Large, spans 2 rows) */}
                     <div className="bento-box md:col-span-2 md:row-span-2 bg-bg-primary p-8 md:p-12 border border-border-light flex flex-col justify-between group hover:border-text-primary/30 transition-colors duration-500">
-                        <div className="mb-20 md:mb-32">
-                            <p className="font-sans text-xs text-text-muted uppercase tracking-widest mb-4">The Sprint</p>
-                            <h3 className="font-gambino text-7xl md:text-[8rem] leading-[0.85] uppercase tracking-tighter text-text-primary">
+                        <div className="mb-20 md:mb-10">
+                            <p className="font-sans text-xs text-text-muted uppercase tracking-widest">The Sprint</p>
+                            <h3 className="font-gambino text-7xl md:text-[8rem] leading-[0.85] uppercase tracking-tighter text-text-primary mt-12 md:mt-24">
                                 48 <br /> Hours
                             </h3>
                         </div>
@@ -117,16 +134,22 @@ export default function Structure() {
                     </div>
 
                     {/* Box 5: The Gauntlet (Wide) */}
-                    <div className="bento-box md:col-span-2 bg-bg-primary p-8 md:p-10 border border-border-light flex flex-col md:flex-row justify-between md:items-end gap-8 group hover:border-text-primary/30 transition-colors duration-500">
-                        <div className="flex-1">
-                            <p className="font-sans text-xs text-text-muted uppercase tracking-widest mb-4">The Gauntlet</p>
-                            <h3 className="font-gambino text-5xl md:text-6xl uppercase tracking-tighter text-text-primary leading-none">
-                                MVP <span className="font-serif italic font-light lowercase text-accent tracking-tight text-6xl md:text-7xl">to</span> Final
-                            </h3>
+                    <div className="bento-box md:col-span-2 bg-bg-primary p-8 md:p-10 border border-border-light flex flex-col md:flex-row group hover:border-text-primary/30 transition-colors duration-500">
+                        {/* First Half */}
+                        <div className="w-full md:w-1/2 flex flex-col justify-between mb-8 md:mb-0">
+                            <div>
+                                <p className="font-sans text-xs text-text-muted uppercase tracking-widest mb-6">The Gauntlet</p>
+                                <h3 className="font-gambino text-3xl md:text-4xl lg:text-[4rem] uppercase tracking-tighter text-text-primary leading-[0.85]">
+                                    MVP <br /> <span className="font-serif italic font-light lowercase text-accent tracking-tight text-4xl md:text-5xl lg:text-[5rem]">to</span> Final
+                                </h3>
+                            </div>
                         </div>
-                        <p className="font-sans text-sm text-text-muted leading-relaxed max-w-sm flex-1">
-                            Survive the initial MVP evaluation to reach the final round. Defend your architecture in front of our elite panel of 5-7 judges.
-                        </p>
+                        {/* Second Half */}
+                        <div className="w-full md:w-1/2 flex md:items-end justify-start md:justify-end">
+                            <p className="font-sans text-sm md:text-base text-text-muted leading-relaxed max-w-sm">
+                                Survive the initial MVP evaluation to reach the final round. Defend your architecture in front of our elite panel of 5-7 judges.
+                            </p>
+                        </div>
                     </div>
 
                 </div>
